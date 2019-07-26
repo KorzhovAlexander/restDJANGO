@@ -3,7 +3,7 @@ from rest_framework import generics
 
 from cars.models import Car
 from .serializers import CarDetailSer, CarsSer
-
+from .permissions import IsOwnerOrReadOnly
 
 # Create your views here.
 
@@ -19,3 +19,4 @@ class CarsView(generics.ListAPIView):
 class CarDetailView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = CarDetailSer
     queryset = Car.objects.all()
+    permission_classes = (IsOwnerOrReadOnly, )

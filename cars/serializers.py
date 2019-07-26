@@ -9,6 +9,8 @@ class CarsSer(serializers.ModelSerializer):
 
 
 class CarDetailSer(serializers.ModelSerializer):
+    user = serializers.HiddenField(default=serializers.CurrentUserDefault())
+
     class Meta:
         model = Car
         fields = '__all__'

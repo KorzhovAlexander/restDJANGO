@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'cars',
     'crispy_forms',
+    'djoser',
 ]
 
 MIDDLEWARE = [

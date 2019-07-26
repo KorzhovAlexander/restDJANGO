@@ -15,13 +15,13 @@ class CarCreateView(generics.CreateAPIView):
 
     def post(self, request, *args, **kwargs):
         print(request.data)
-        return Response
+        return Response({1: 123})
 
 
 class CarsView(generics.ListAPIView):
     serializer_class = CarsSer
     queryset = Car.objects.all()
-    permission_classes = (IsAuthenticated, )
+    permission_classes = (IsAuthenticated,)
 
 
 class CarDetailView(generics.RetrieveUpdateDestroyAPIView):

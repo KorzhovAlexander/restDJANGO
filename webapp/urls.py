@@ -20,6 +20,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('cars/', include('cars.urls')),
     path('auth/', include('rest_framework.urls')),
+    path('auth_static/', include('djoser.urls')),
     path('auth_token/', include('djoser.urls.authtoken')),
 
 ]
